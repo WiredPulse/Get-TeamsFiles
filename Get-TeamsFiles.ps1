@@ -28,7 +28,11 @@ param(
 if(-not(get-module -Name PnP.PowerShell)){
     Install-Module -Name PnP.PowerShell
 }
-
+if(-not(get-module -Name PnP.PowerShell)){
+    Write-Host -ForegroundColor red "Error: Can't install PnP module, check organization security policy or Internet connection"
+    pause
+    break
+} 
 $user = $user.Replace(".","_").Replace("@","_")
 if($url[-1] -ne "\" -or $url[-1] -ne "/"){
     $url = $url + "\"
