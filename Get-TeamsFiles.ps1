@@ -30,6 +30,9 @@ if(-not(get-module -Name PnP.PowerShell)){
 }
 
 $user = $user.Replace(".","_").Replace("@","_")
+if($url[-1] -ne "\" -or $url[-1] -ne "/"){
+    $url = $url + "\"
+} 
 $url = $url + $user
 $listUrl = "Documents"
 Connect-PnPOnline -url $url -UseWebLogin -ForceAuthentication -WarningAction SilentlyContinue
