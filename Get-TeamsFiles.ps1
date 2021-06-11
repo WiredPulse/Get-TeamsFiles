@@ -6,7 +6,8 @@
         Used to supply your user
 
     .PARAMETER url
-        Used to supply the URL to the Tenant's Teams instance
+        Used to supply the URL to your person OneDrive space in your Tenant's instance. By navigating to https://onedrive.live.com/about/en-us/signin and
+        logging, in you can quickly retrieve the URL. 
 
     .PARAMETER destination
         Used to supply the destination to download the files to
